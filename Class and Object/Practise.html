@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Ques: You are creating  website for your college. Create a class user with 2 properties, name and email. It also has a method called viewData() that allows user to view website data. -->
+
+    <script>
+        class User {
+            constructor(name, email) {
+                this.name = name;
+                this.email = email;
+            }
+            viewData() {
+                console.log("Information!");
+            }
+        }
+
+        let user1 = new User("Rohit", "rohitmonu154@gmail.com");
+        user1.viewData();
+
+        // <!-- Ques 2 : Create a new class called admin which inherits from user. Add a new method called editData to Admin that allows it to edit website data. -->
+
+        class Admin extends User {
+            editData(name, mail) {
+                super.name = name;
+                super.email = mail;
+            }
+        }
+
+        let editinfo = new Admin();
+
+        editinfo.editData('Komal', 'komal@mail.com');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practise Set</title>
+    <style>
+        .blue {
+            background-color: aqua;
+        }
+
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="mybutton" onclick="count()">Count Me</button>
+    <p id="para"></p>
+    <script>
+        // Display greet based on current hour
+
+        // let cdate = new Date()
+        // let name = "Rohit";
+        // console.log(cdate);
+        // let hrs = cdate.getHours();
+        // console.log(hrs)
+        // if (hrs > 4 && hrs < 12) {
+        //     console.log("Good Morning! "+name);
+        // } else if (hrs >= 12 && hrs <= 16) {
+        //     console.log("Good Afternoon! "+name)
+        // } else if (hrs > 16 && hrs < 20) {
+        //     console.log("Good Eveing! "+name)
+        // }
+        // else {
+        //     console.log("Good NIght! "+name)
+        // }
+
+
+        // Create a button which shows the number how many times it has been pressed.
+        // Also, it has different colors for when it has been pressed odd or even times.
+        // The click count should also survive browser refresh.
+        let c = 0;
+        let btn;
+        function count() {
+            let rcval = JSON.parse(localStorage.getItem("counting"));
+            c++;
+            if (c % 2 == 0) {
+                document.querySelector("button").classList.remove("red");
+                document.querySelector("button").classList.add("blue");
+            } else {
+                document.querySelector("button").classList.remove("blue");
+                document.querySelector("button").classList.add("red");
+
+            }
+            document.getElementById("para").innerHTML = `Button pressed ${c} times ${rcval}`
+        }
+        localStorage.setItem("counting", JSON.stringify("c"));
+    </script>
+</body>
+
+</html>

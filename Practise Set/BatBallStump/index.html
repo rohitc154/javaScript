@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bat Ball Stump</h1>
+    <button onclick="
+    const userChoiceMsg = 'You Choose : Bat';
+    computerChoiceSelect();
+const compChoiceMsg = `Computer Choice : ${compChoice}`;
+
+let resultMsg;
+    if (compChoice === 'Ball') {
+        resultMsg = 'You Won!';
+    }else if(compChoice === 'Bat'){
+        resultMsg = `It's Tie!`;
+    }else{
+        resultMsg = 'Computer Won!';
+    }
+    alert(`You Choose : Bat. Computer Choice : ${compChoice} and ${resultMsg}`);
+    ">Bat</button>
+
+    <button onclick="
+
+    userChoiceMsg = 'You Choose : Ball';
+    computerChoiceSelect();
+compChoiceMsg = `Computer Choice : ${compChoice}`;
+
+    if (compChoice === 'Ball') {
+        resultMsg =`It's Tie!`;
+    }else if(compChoice === 'Bat'){
+        resultMsg = 'Computer Won!';
+    }else{
+        resultMsg = 'You Won!';
+    }
+    alert(`You Choose : Ball. Computer Choice : ${compChoice} and ${resultMsg}`);
+    ">Ball</button>
+
+    <button onclick="
+    userChoiceMsg = 'You Choose : Stump';
+    computerChoiceSelect();
+    compChoiceMsg = `Computer Choice : ${compChoice}`;
+
+    if (compChoice === 'Stump') {
+        resultMsg =`It's Tie!`;
+    }else if(compChoice === 'Bat'){
+        resultMsg = 'User Won!';
+    }else{
+        resultMsg = 'Computer Won!';
+    }
+    alert(`You Choose : Stump. Computer Choice : ${compChoice} and ${resultMsg}`);
+    ">Stump</button>
+
+    <script>
+        let compChoice;
+        function computerChoiceSelect() {
+            let randomNumber = Math.random() * 3;
+            if (randomNumber > 0 && randomNumber <= 1) {
+                compChoice = 'Bat';
+            } else if (randomNumber > 1 && randomNumber <= 2) {
+                compChoice = 'Ball';
+            } else {
+                compChoice = 'Stump';
+            }
+        }
+    </script>
+</body>
+
+</html>

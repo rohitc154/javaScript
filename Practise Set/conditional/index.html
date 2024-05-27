@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="age">Enter Your Age : </label>
+        <input type="number" name="" id="age">
+        <br>
+
+        <label for="gender">Choose Your Gender : </label>
+        <label for=""><input type="radio" id="male" name="gender" value="Male">Male </label>
+        <label for=""><input type="radio" id="female" name="gender" value="Female">Female </label>
+        <label for=""><input type="radio" id="other" name="gender" value="Other">Other</label>
+        <br>
+
+        <label for="bill">Enter Your Bill Amount : <input type="number" name="bill" id="bill"></label>
+        <br>
+        <button onclick="getVal()">Check For Offer</button>
+
+        <p id="p1"></p>
+    </div>
+    <script>
+        function getVal() {
+            const maxDiscount = 500;
+            let age = document.getElementById('age').value;
+            console.log(age);
+
+            let selectedGen;
+            if (document.getElementById('male').checked) {
+                selectedGen = document.getElementById('male').value;
+            } else if (document.getElementById('female').checked) {
+                selectedGen = document.getElementById('female').value;
+            } else if (document.getElementById('other').checked) {
+                selectedGen = document.getElementById('other').value;
+            }
+            console.log(selectedGen);
+
+            let billAmount = document.getElementById('bill').value;
+            console.log(billAmount);
+
+            var finalBill;
+
+            if (selectedGen == 'Female') {
+
+                finalBill = billAmount - (billAmount / 2);
+
+                if (finalBill > 500) {
+                    finalBill = billAmount - 500;
+                    document.getElementById('p1').innerText = `Your Bill amount is ${billAmount}\nyour get 500 off\nyour final Bill Amount : ${finalBill} `;
+                } else {
+                    document.getElementById('p1').innerText = `Your Bill amount is ${billAmount}\nyour get 50% off\nyour final Bill Amount : ${finalBill} `;
+                }
+            } else if (age < 5) {
+                document.getElementById('p1').innerHTML = "Baby You are Free!"
+            } else if (age >= 5 && age <= 8) {
+
+                finalBill = billAmount - (billAmount / 2);
+
+                if (finalBill > 500) {
+                    finalBill = billAmount - 500;
+                    document.getElementById('p1').innerText = `Your Bill amount is ${billAmount}\nyour get 500 off\nyour final Bill Amount : ${finalBill} `;
+                } else {
+                    document.getElementById('p1').innerText = `Your Bill amount is ${billAmount}\nyour get 50% off\nyour final Bill Amount : ${finalBill} `;
+                }
+            } else if (age > 65) {
+                finalBill = billAmount - (billAmount * 0.7);
+
+                if (finalBill > 500) {
+                    finalBill = billAmount - 500;
+                    document.getElementById('p1').innerText = `Your Bill amount is ${billAmount}\nyour get 500 off\nyour final Bill Amount : ${finalBill} `;
+                } else {
+                    document.getElementById('p1').innerText = `Your Bill amount is ${billAmount}\nyour get 70% off\nyour final Bill Amount : ${finalBill} `;
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

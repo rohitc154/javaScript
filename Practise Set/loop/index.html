@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 8, 9, 5, 6];
+        // console.log(arr.toString());
+        // arr.unshift(4);
+        // console.log(arr.toString());
+        // arr.push(7);
+        // console.log(arr.toString());
+
+        // function rpvalue() {
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] == 9) {
+        //             return arr[i];
+        //         }
+        //     }
+        // }
+        // console.log(rpvalue());
+
+        // let arr2 = arr.splice(0,arr.length);
+        // console.log(arr2);
+
+        function prime(num) {
+            flag = 0;
+            for (let i = num - 1; i >= 2; i--) {
+                // console.log(i);
+                if (num % i == 0) {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 1) {
+                console.log("Not Prime!")
+            } else {
+                console.log("Prime");
+            }
+        }
+        let val = prime(255);
+
+        let arr2 = [];
+
+        count = 0;
+        i = 0;
+    </script>
+</body>
+
+</html>
