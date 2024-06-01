@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Functions</title>
+</head>
+
+<body>
+
+    <button id="btn">I'm Button</button>
+    <script>
+        let colorchange = event => {
+            // color: White;
+            console.log("Mouse Entered!");
+        }
+
+        let mybutton = document.querySelector('#btn');
+        mybutton.addEventListener('click', event => console.log("Event Executed!"));
+
+        mybutton.addEventListener('mouseenter', colorchange);
+
+        //Anonymous Functions
+
+        // let sum = function (num1, num2) {
+        //     return num1 + num2;
+        // }
+        // console.log(sum(5, 8));
+
+        //Function can also be passed as an argument to another function ----> In anonymous function name of the function doesn't matter
+        // let sum3Number = function (num3, sum3) {
+        //     return sum(sum3, num3);
+        // }
+        // console.log(sum3Number(sum(2, 3), 7));
+
+        //Arrow Function
+        // let square = num => {
+        //     return num * num;
+        // }
+        // console.log(square(5));
+
+        //SetTimeOut function
+        // let timerId = setTimeout(
+        //     () => console.log('Good Morining!'), 5000
+        // );
+
+        // console.log(timerId);
+
+        // clearTimeout(timerId, 2000);
+
+        //setInterval()
+        // let intervalId = setInterval(() => console.log(`Execute ho Gya! ${new Date()}`), 2000);
+
+        // setTimeout(() => clearInterval(intervalId), 10000);
+
+        //Foreach Loops
+        // let food = ['Rice', 'Bread', 'Cookies', 'Chocolate'];
+        // food.forEach(element => {
+        //     console.log(element);
+        // });
+
+
+        //Array Advance methods
+
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8,];
+        let val = arr.filter((num, index) => {
+            if (num % 2 == 0)
+                return true;
+            else
+                return false;
+        });
+
+        console.log(val);
+
+
+    </script>
+    ------------------------------------------------------
+    <script>
+
+    </script>
+</body>
+
+</html>
