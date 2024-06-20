@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeList</title>
+</head>
+
+<body style="background-color: rgb(37, 26, 26); color: white;">
+
+</body>
+<script>
+    // Creating HTML Elements using JavaScript
+    const div = document.createElement('div');
+    console.log(div);
+    div.className = "main" // Setting className to the element
+    // div.id = "myid" // Setting id to the element
+    div.id = Math.floor(Math.random() * 10 + 1);
+    div.setAttribute("title", "Dynamic Title");
+    div.style.backgroundColor = "green";
+    div.style.padding = "15px";
+    // div.innerText = "Hello! Rohit"; // It's not much optimize
+
+    const addText = document.createTextNode("Hello ! Rohit");
+    div.appendChild(addText)
+
+    // Now attaching div element to the body
+    document.body.appendChild(div)
+</script>
+
+</html>

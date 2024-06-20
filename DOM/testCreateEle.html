@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Creation Dynamically</title>
+</head>
+
+<body style="background-color: rgb(62, 55, 55); color: white;">
+    <h3>Dynamically Creating HTML 'div' element</h3>
+    <div>
+        <label for="color" style="display: block;">Enter Color : </label>
+        <input type="text" id="color">
+    </div>
+    <label for="value" style="display: block;">Enter Element Value :</label>
+    <input type="text" id="value" style="display: block;">
+    <button onclick="createEle()">Create Div</button>
+</body>
+<script>
+    function createEle() {
+        const val = document.getElementById("value").value;
+        const color = document.getElementById("color").value;
+
+        const eleDiv = document.createElement('div');
+        console.log(eleDiv);
+        eleDiv.className = "myclass"
+        // eleDiv.id = Math.ceil(Math.random() * 10 + 1);
+        eleDiv.innerText = val;
+        eleDiv.style.color = color;
+        document.body.appendChild(eleDiv)
+    }
+
+</script>
+
+</html>

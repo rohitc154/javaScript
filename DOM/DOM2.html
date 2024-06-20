@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Object</title>
+</head>
+
+<body style="background-color: black; color: whitesmoke;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent');
+
+    // console.log(parent);
+    // console.log(parent.children); // It gives htmlcollection
+    // console.log(parent.children[1]); // Accessing value of htmlcollection
+    // console.log(parent.children[1].innerHTML); // Accessing value of htmlcollection
+
+    // for (let index = 0; index < parent.children.length; index++) {
+    //     console.log(parent.children[index].innerHTML);
+    // }
+
+    parent.children[0].style.color = "red"; // Changing stylling of htmlCollection element
+
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    const dayOne = document.querySelector('.day');
+    // console.log(dayOne);
+    // console.log(dayOne.nextElementSibling); // Selecting next element
+    // console.log(dayOne.parentElement); // Selecting parent element from child element
+
+    // -----------------------:)------------------(:-----------------
+    // NodeList Discussion
+
+    console.log("NODES :", parent.childNodes); // It also counts the enter
+
+
+
+</script>
+
+</html>

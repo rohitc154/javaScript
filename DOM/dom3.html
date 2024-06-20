@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    <!-- <button onclick="addLanguage()">Add</button> -->
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = langName;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage('Python');
+    addLanguage('C++');
+
+    // This function is more optimized than the above function because, in this code tree has to not traverse till the end, it directly creates textNode and insert it.
+    function optiLang(langName) {
+        const li = document.createElement('li');
+        const addText = document.createTextNode(langName);
+        li.appendChild(addText);
+        document.querySelector('.language').appendChild(li);
+    }
+    optiLang('GoLang');
+
+    // -------------------------------:) Editting Values (:---------------------------
+
+    // First-way
+    const secondLang = document.querySelector('li:nth-child(2)')
+    // secondLang.innerHTML = "Mojo"; // This can be done but it is not optimized
+    const newli = document.createElement('li');
+    newli.textContent = "Mojo";
+    secondLang.replaceWith(newli);
+
+    // Second-way
+    // const firstLang = document.createElement('li:first-child')
+    // firstLang.outerHTML = '<li>Typescript</li>'
+
+    // -------------------------------:) Removing Values (:---------------------------
+
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove();
+
+</script>
+
+</html>
