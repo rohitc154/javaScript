@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="image">
+            <li><img src="https://images.pexels.com/photos/4608979/pexels-photo-4608979.jpeg" alt="photoshop"
+                    id="photoshop" width="200px">
+            </li>
+            <li><img src="https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" id="japan" width="200px">
+            </li>
+            <li><img width="200px"
+                    src="https://images.pexels.com/photos/158489/yellowstone-national-park-sunset-twilight-dusk-158489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" id="river">
+            </li>
+            <li><img width="200px"
+                    src="https://images.pexels.com/photos/2317904/pexels-photo-2317904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" id="bird">
+            </li>
+            <li><img width="200px"
+                    src="https://images.pexels.com/photos/161293/prambanan-temple-java-hinduism-161293.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" id="prayer">
+            </li>
+            <li>
+                <a style="color: aliceblue;" href="https://google.com/" id="google">Google</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        // Apporaches to add events on any html element : 
+        // 1. Setting onclick method on the element. This approach is not scalable
+
+        // 2. Setting onclick method
+        // document.getElementById('bird').onclick = () => {
+        //     alert('Bird Clicked!')
+        // }
+
+        // 3. Setting Eventlistener method, It is good approach, it takes three arguments, first is event name, 2nd is function and 3rd is boolean value(true/false),Default value of third argument is false.
+        // document.getElementById('bird').addEventListener('click', () => {
+        //     alert('Bird Clicked!')
+        // })
+
+        // 4. jQuery : on
+
+        // Event to study : type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget, clientX, clientY, screenX, screenY, altkey, ctrlkey, shiftkey, keycode
+
+        // -------------------------:) ------------(:-----------------------------
+
+        // Let's discuss third argument, when it is set to true, it is bubble `capturing`, it first captures the upper event and then lower event.
+        //  When it's false, it is `bubbling`, it first captures the lower event and then higher event.
+        // document.getElementById('image').addEventListener('click', (e) => {
+        //     console.log("Clicked Inside the Ul");
+        // }, false)
+        // document.getElementById('bird').addEventListener('click', (e) => {
+        //     console.log("Bird Clicked");
+        //     e.stopPropagation(); // It restricts the upper propogation.
+        // }, false)
+
+        // -----------------------------:) ------------ (: ------------------------
+
+        // document.getElementById('google').addEventListener('click', (e) => {
+        //     console.log('Google Clicked!');
+        //     e.stopPropagation();
+        //     e.preventDefault(); // It restrict the link to open
+        // }, false)
+
+        // -----------------------------:) ------------ (: ------------------------
+        // Removing of any html element
+        // 1.
+        document.querySelector('#image').addEventListener('click', (e) => {
+            // console.log(e.target.parentNode);
+            console.log(e.target.tagName);
+            if (e.target.tagName == 'IMG') {
+                console.log(e.target.id);
+                let removeIt = e.target.parentNode;
+                removeIt.remove();
+            }
+        }, false)
+
+        // 2.
+        // document.querySelector('#image').addEventListener('click', (e) => {
+        //     console.log(e.target.parentNode);
+        //     // let removeIt = e.target.parentNode;
+        //     removeIt.parentNode.removeChild(removeIt);
+        // }, false)
+
+
+    </script>
+</body>
+
+</html>
