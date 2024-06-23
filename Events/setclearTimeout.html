@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Chai Aur Code</h1>
+    <button id="stop">Stop</button>
+    <script>
+        // ---------------------:) setTimeout (:-----------------
+
+        // const sayName = function () {
+        //     console.log("Rohit");
+        // }
+        // setTimeout(sayName, 2000);
+
+        const message = () => {
+            document.querySelector('h1').innerHTML = "Javascript Series";
+        }
+        const changeMe = setTimeout(message, 5000);
+
+        // ----------------:) clearTimeout (:--------------
+
+        // clearTimeout(changeMe) // It takes reference of setTimeout
+
+        document.querySelector('#stop').addEventListener('click', () => {
+            clearTimeout(changeMe);
+            // alert("Stopped");
+        })
+
+    </script>
+</body>
+
+</html>

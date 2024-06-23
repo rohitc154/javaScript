@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Chai Aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        let intervalId;
+        const start = document.getElementById('start').addEventListener('click', () => {
+            intervalId = setInterval(sayDate, 1000, "Rohit"); // Reference of the sayDate function is passed along with the time and string. 
+        })
+
+        const sayDate = (str) => {
+            console.log(str, Date.now());
+        }
+
+
+        const stop = document.getElementById('stop').addEventListener('click', () => {
+            clearInterval(intervalId)
+        })
+
+    </script>
+</body>
+
+</html>
