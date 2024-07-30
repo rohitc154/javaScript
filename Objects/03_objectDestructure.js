@@ -5,9 +5,12 @@ const course = {
 }
 
 
-const { instructor: instr } = course;
+// const { instructor } = course;
 // console.log(instructor);
-console.log(instr);
+
+// const { instructor: instr } = course;
+// console.log(instr);
 
 //Api DAta Formating
 
+// IN JSON both key and values are string

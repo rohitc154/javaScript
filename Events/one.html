@@ -36,7 +36,7 @@
     </div>
     <script>
         // Apporaches to add events on any html element : 
-        // 1. Setting onclick method on the element. This approach is not scalable
+        // 1. Setting onclick method on the html element itself. This approach is not scalable
 
         // 2. Setting onclick method
         // document.getElementById('bird').onclick = () => {
@@ -76,13 +76,15 @@
         // Removing of any html element
         // 1.
         document.querySelector('#image').addEventListener('click', (e) => {
-            // console.log(e.target.parentNode);
-            console.log(e.target.tagName);
-            if (e.target.tagName == 'IMG') {
-                console.log(e.target.id);
-                let removeIt = e.target.parentNode;
-                removeIt.remove();
-            }
+            // let removeIt = e.target.parentNode;
+            // removeIt.remove();
+            //     console.log(e.target.tagName);
+
+            // if (e.target.tagName == 'IMG') {
+            //     console.log(e.target.id);
+            //     let removeIt = e.target.parentNode;
+            //     removeIt.remove();
+            // }
         }, false)
 
         // 2.

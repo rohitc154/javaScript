@@ -12,14 +12,16 @@
 </body>
 <script>
     // Creating HTML Elements using JavaScript
+
     const div = document.createElement('div');
     console.log(div);
     div.className = "main" // Setting className to the element
     // div.id = "myid" // Setting id to the element
     div.id = Math.floor(Math.random() * 10 + 1);
-    div.setAttribute("title", "Dynamic Title");
+    div.setAttribute("title", "DynamicTitle");
     div.style.backgroundColor = "green";
     div.style.padding = "15px";
+    div.style.borderRadius = "15px";
     // div.innerText = "Hello! Rohit"; // It's not much optimize
 
     const addText = document.createTextNode("Hello ! Rohit");

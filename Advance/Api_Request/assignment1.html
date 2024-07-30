@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+<div id="root"></div>
+
+<body>
+
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/rohitc154';
+
+    const root = document.getElementById('root');
+    // Stylling the Card
+    root.style.width = '200px';
+    root.style.border = '2px solid black';
+    root.style.borderRadius = '15px'
+    root.style.backgroundColor = 'rgb(235 229 229 / 37%)';
+
+    let pic;
+    let followers;
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestURL);
+
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+
+            const data = JSON.parse(this.responseText);
+
+            // Creating and Appending image tag.
+            const myImg = document.createElement('img');
+            myImg.src = data.avatar_url;
+            root.appendChild(myImg)
+
+            //  Adding style to the image
+            myImg.style.width = '200px'
+            myImg.style.borderRadius = '15px'
+
+            //  Creating and appending paragraph tag.
+            const para = document.createElement('p');
+            para.innerText = `Follower Count is : ${data.followers}`;
+            root.appendChild(para)
+
+            // Paragraph styllng
+            para.style.border = '2px solid red';
+            para.style.padding = '20px'
+            para.style.textAlign = "center";
+        }
+    }
+    xhr.send()
+</script>
+
+</html>
